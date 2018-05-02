@@ -12,5 +12,5 @@ public interface AccountRepository {
 
     public void createAccount(Account account);
 
-    public void deleteAccount(int id);
+    public int deleteAccount(int id);
 }

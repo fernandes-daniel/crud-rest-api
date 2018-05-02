@@ -32,7 +32,7 @@ public class AccountControllerTest {
     private AccountService accountService;
 
     @Test
-    public void testGetAccounts() throws Exception {
+    public void getAccounts() throws Exception {
         given(this.accountService.getAccounts())
                 .willReturn(new ArrayList<AccountDto>(){{
                     add(AccountDto.fromDefault(1,"fName1", "sName1","accNum1"));
@@ -47,7 +47,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    public void testCreateAccount() throws Exception {
+    public void createAccount() throws Exception {
         AccountDto accountDto = AccountDto.fromDefault(1, "fName1", "sName1", "accNum1");
 
 
@@ -65,7 +65,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    public void testDeleteAccount() throws Exception {
+    public void deleteAccount() throws Exception {
         given(this.accountService.deleteAccount(200))
                 .willReturn(1);
         this.mockMvc.perform(
